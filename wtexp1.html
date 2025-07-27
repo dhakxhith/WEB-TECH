@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Resume Builder</title>
+</head>
+<body>
+    <h1>Online Resume Builder</h1>
+    
+    <form>
+        <h2>Personal Information</h2>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"><br><br>
+        
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="2" cols="30"></textarea><br><br>
+        
+        <label for="linkedin">LinkedIn:</label>
+        <input type="url" id="linkedin" name="linkedin"><br><br>
+        
+        <h2>Professional Summary</h2>
+        <textarea id="summary" name="summary" rows="5" cols="50"></textarea><br><br>
+        
+        <h2>Work Experience</h2>
+        <fieldset>
+            <legend>Job 1</legend>
+            <label for="job1-title">Job Title:</label>
+            <input type="text" id="job1-title" name="job1-title"><br><br>
+            
+            <label for="job1-company">Company:</label>
+            <input type="text" id="job1-company" name="job1-company"><br><br>
+            
+            <label for="job1-dates">Dates:</label>
+            <input type="text" id="job1-dates" name="job1-dates"><br><br>
+            
+            <label for="job1-description">Description:</label><br>
+            <textarea id="job1-description" name="job1-description" rows="4" cols="50"></textarea>
+        </fieldset><br>
+        
+        <button type="button" onclick="addJob()">Add Another Job</button><br><br>
+        
+        <h2>Education</h2>
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" name="degree"><br><br>
+        
+        <label for="university">University:</label>
+        <input type="text" id="university" name="university"><br><br>
+        
+        <label for="grad-year">Graduation Year:</label>
+        <input type="text" id="grad-year" name="grad-year"><br><br>
+        
+        <h2>Skills</h2>
+        <label for="skills">List your skills (comma separated):</label><br>
+        <textarea id="skills" name="skills" rows="3" cols="50"></textarea><br><br>
+        
+        <h2>Generate Resume</h2>
+        <input type="submit" value="Generate Resume">
+        <input type="reset" value="Reset Form">
+    </form>
+    
+    <hr>
+    
+    <h2>Your Resume Preview</h2>
+    <div id="resume-preview">
+        <h3 id="preview-name">Your Name</h3>
+        <p id="preview-contact">Email | Phone | Address</p>
+        
+        <h4>Professional Summary</h4>
+        <p id="preview-summary">Your professional summary will appear here.</p>
+        
+        <h4>Work Experience</h4>
+        <div id="preview-experience">
+            <p><strong>Job Title</strong> at <strong>Company</strong> (Dates)</p>
+            <p>Job description will appear here.</p>
+        </div>
+        
+        <h4>Education</h4>
+        <p id="preview-education">Degree from University (Year)</p>
+        
+        <h4>Skills</h4>
+        <p id="preview-skills">Your skills will appear here.</p>
+    </div>
+    
+    <p><em>Note: This is a basic HTML-only version. For full functionality, JavaScript would be needed to update the preview and CSS for styling.</em></p>
+</body>
+</html>
