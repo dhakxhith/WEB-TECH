@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Resume Builder - Create professional resumes for free">
+    <title>Online Resume Builder</title>
+</head>
+<body>
+    <!-- Main heading for the resume builder -->
+    <h1>Online Resume Builder</h1>
+    
+    <!-- Progress indicator -->
+    <progress value="25" max="100">25%</progress>
+    
+    <!-- Main registration form -->
+    <form action="/serverlogic" method="post" enctype="multipart/form-data">
+        <!-- Personal Information Section -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            
+            <div>
+                <label for="firstName">First Name*</label>
+                <input type="text" id="firstName" name="firstName" required 
+                       placeholder="John" autofocus maxlength="50">
+            </div>
+            
+            <div>
+                <label for="lastName">Last Name*</label>
+                <input type="text" id="lastName" name="lastName" required 
+                       placeholder="Doe" maxlength="50">
+            </div>
+            
+            <div>
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required 
+                       placeholder="john.doe@example.com">
+            </div>
+            
+            <div>
+                <label for="password">Create Password*</label>
+                <input type="password" id="password" name="password" required 
+                       placeholder="Minimum 8 characters" minlength="8">
+            </div>
+            
+            <div>
+                <label for="phone">Phone Number*</label>
+                <input type="tel" id="phone" name="phone" required 
+                       placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            </div>
+            
+            <div>
+                <label for="dob">Date of Birth*</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            
+            <div>
+                <label for="address">Address*</label>
+                <input type="text" id="address" name="address" required 
+                       placeholder="123 Main St, City, Country">
+            </div>
+            
+            <div>
+                <label for="photo">Upload Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </div>
+            
+            <div>
+                <label>Gender*</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+        </fieldset>
+        
+        <!-- Professional Information Section -->
+        <fieldset>
+            <legend>Professional Information</legend>
+            
+            <div>
+                <label for="jobTitle">Job Title*</label>
+                <input type="text" id="jobTitle" name="jobTitle" required 
+                       placeholder="Software Developer" maxlength="100">
+            </div>
+            
+            <div>
+                <label for="linkedin">LinkedIn Profile URL*</label>
+                <input type="url" id="linkedin" name="linkedin" required 
+                       placeholder="https://linkedin.com/in/yourprofile">
+            </div>
+            
+            <div>
+                <label for="portfolio">Portfolio Website</label>
+                <input type="url" id="portfolio" name="portfolio" 
+                       placeholder="https://yourportfolio.com">
+            </div>
+            
+            <div>
+                <label for="experience">Years of Experience*</label>
+                <input type="number" id="experience" name="experience" required 
+                       min="0" max="50" placeholder="5">
+            </div>
+            
+            <div>
+                <label for="salary">Expected Salary (per year)</label>
+                <input type="number" id="salary" name="salary" 
+                       min="0" step="1000" placeholder="50000">
+            </div>
+            
+            <div>
+                <label for="skills">Key Skills*</label>
+                <textarea id="skills" name="skills" required 
+                          placeholder="List your key skills separated by commas"></textarea>
+            </div>
+            
+            <div>
+                <label for="summary">Professional Summary*</label>
+                <textarea id="summary" name="summary" required 
+                          placeholder="Briefly describe your professional background and goals"></textarea>
+            </div>
+        </fieldset>
+        
+        <!-- Education Section -->
+        <fieldset>
+            <legend>Education</legend>
+            
+            <div>
+                <label for="educationLevel">Highest Education Level*</label>
+                <select id="educationLevel" name="educationLevel" required>
+                    <option value="" disabled selected>Select your education level</option>
+                    <option value="highschool">High School</option>
+                    <option value="associate">Associate Degree</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="phd">PhD</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="university">University/Institution*</label>
+                <input type="text" id="university" name="university" required 
+                       placeholder="University of Example">
+            </div>
+            
+            <div>
+                <label for="major">Major/Field of Study*</label>
+                <input type="text" id="major" name="major" required 
+                       placeholder="Computer Science">
+            </div>
+            
+            <div>
+                <label for="graduationYear">Graduation Year*</label>
+                <input type="number" id="graduationYear" name="graduationYear" required 
+                       min="1900" max="2099" placeholder="2020">
+            </div>
+            
+            <div>
+                <label>Certifications (check all that apply)</label>
+                <div>
+                    <input type="checkbox" id="cert1" name="certifications" value="aws">
+                    <label for="cert1">AWS Certified</label>
+                    
+                    <input type="checkbox" id="cert2" name="certifications" value="pmp">
+                    <label for="cert2">PMP Certified</label>
+                    
+                    <input type="checkbox" id="cert3" name="certifications" value="google">
+                    <label for="cert3">Google Certified</label>
+                    
+                    <input type="checkbox" id="cert4" name="certifications" value="microsoft">
+                    <label for="cert4">Microsoft Certified</label>
+                </div>
+            </div>
+        </fieldset>
+        
+        <!-- Job Preferences Section -->
+        <fieldset>
+            <legend>Job Preferences</legend>
+            
+            <div>
+                <label for="jobType">Preferred Job Type*</label>
+                <select id="jobType" name="jobType" required>
+                    <option value="" disabled selected>Select job type</option>
+                    <option value="fulltime">Full-time</option>
+                    <option value="parttime">Part-time</option>
+                    <option value="contract">Contract</option>
+                    <option value="freelance">Freelance</option>
+                    <option value="internship">Internship</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="location">Preferred Location</label>
+                <input type="text" id="location" name="location" 
+                       placeholder="City, Country">
+            </div>
+            
+            <div>
+                <label for="remote">Remote Work Preference*</label>
+                <select id="remote" name="remote" required>
+                    <option value="" disabled selected>Select preference</option>
+                    <option value="remote">Fully Remote</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="office">Office Only</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="search">Search Keywords for Jobs</label>
+                <input type="search" id="search" name="search" 
+                       placeholder="Enter keywords for job search">
+            </div>
+        </fieldset>
+        
+        <!-- Form actions -->
+        <div>
+            <input type="submit" value="Build My Resume">
+            <input type="reset" value="Clear Form">
+        </div>
+    </form>
+</body>
+</html>>
